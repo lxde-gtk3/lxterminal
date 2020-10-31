@@ -1,0 +1,26 @@
+Source: lxterminal
+Section: x11
+Priority: optional
+Maintainer: Debian LXDE Maintainers <pkg-lxde-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Andrew Lee (李健秋) <ajqlee@debian.org>,
+ Yao Wei (魏銘廷) <mwei@lxde.org>,
+ Andriy Grytsenko <andrej@rep.kiev.ua>
+Build-Depends:
+ debhelper (>= 11), intltool, libglib2.0-dev, libgtk-3-dev, libvte-2.91-dev
+Standards-Version: 4.2.1
+Homepage: http://www.lxde.org/
+Vcs-Browser: https://git.lxde.org/gitweb/?p=debian/lxterminal.git
+Vcs-Git: https://git.lxde.org/git/debian/lxterminal.git
+
+Package: lxterminal
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Provides: x-terminal-emulator
+Description: LXDE terminal emulator
+ LXTerminal is a VTE-based terminal emulator for the Lightweight X11 Desktop
+ Environment (LXDE).
+ .
+ It supports multiple tabs and has only minimal dependencies thus being
+ completely desktop-independent. In order to reduce memory usage and increase
+ the performance, all instances of the terminal are sharing a single process.

@@ -1,0 +1,349 @@
+lxterminal (0.3.2-gtk3) unstable; urgency=medium
+
+  * Porting gtk3
+  
+ -- Ali Riza Keskin <parduscix@yandex.ru> 
+
+lxterminal (0.3.2-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Fix bug with libvte 0.54 where closing 1 tab can cause other tabs to
+      be closed.
+  * Add gbp.conf for gbp config
+  * Use debhelper 11
+  * Bump standards-Version to 4.2.1
+
+ -- Yao Wei (魏銘廷) <mwei@lxde.org>  Sun, 23 Sep 2018 09:07:58 +0800
+
+lxterminal (0.3.1-2) unstable; urgency=medium
+
+  * This version is uploaded by accident. It is the same as 0.3.1-1.
+
+ -- Yao Wei (魏銘廷) <mwei@lxde.org>  Sat, 30 Dec 2017 11:43:45 +0100
+
+lxterminal (0.3.1-1) unstable; urgency=low
+
+  * Merge upstream version to 0.3.1:
+    - Changing keyboard shortcuts can be achieved by inputting key chords,
+      rather than manual input.
+  * Bump Standards-Version to 4.1.1:
+    - Registration as an /usr/bin/x-terminal-emulator alternative now has
+      priority of 20 instead of 40, as stated in Debian Policy §11.8.3.
+  * Use debhelper 10.
+  * Remove patches included in new upstream release.
+  * Bump debian/watch version to 4.
+  * Clean up debian/rules to use debhelper defaults.
+  * Remove unused build dependency autotools-dev.
+  * Remove debian/source/lintian-overrides as the supressed warning does not
+    exist.
+  * Use libvte-2.91 of GTK+ 3.0. (Closes: #790184)
+  * Fix login shell with -e in some cases. (Closes: #878301)
+  * Bump Standards-Version to 4.1.3
+
+
+ -- Yao Wei (魏銘廷) <mwei@lxde.org>  Mon, 30 Oct 2017 21:37:28 +0800
+
+lxterminal (0.3.0-3) unstable; urgency=low
+
+  * Replace lxterminal-dbg with automatic debug package.
+  * Bump Standards-Version to 4.0.0:
+    - Use https variant of copyright-format url.
+
+ -- Yao Wei (魏銘廷) <mwei@lxde.org>  Mon, 03 Jul 2017 23:30:54 +0800
+
+lxterminal (0.3.0-2) unstable; urgency=high
+
+  * Fix improper use of /tmp for a socket file. (CVE-2016-10369)
+    (Closes: #862098)
+  * Fix tab renaming dialog. (Closes: #862096)
+
+ -- Yao Wei (魏銘廷) <mwei@lxde.org>  Tue, 09 May 2017 12:13:07 +0800
+
+lxterminal (0.3.0-1) unstable; urgency=medium
+
+  * Enabling parallel build (pass --parallel to dh).
+  * Remove empty debian/patches/series file.
+  * Bump Standards-Version to 3.9.8:
+    - removing menu file.
+  * Changing Maintainer e-mail to Alioth based one.
+  * Merging upstream version 0.3.0 (Closes: #767060, LP: #1252451,
+    #1298664, #1389588, #1513347, #1557113).
+  * Using https for VCS fields in debian/control file.
+  * Adding override on dh_auto_test, it fails with 0.3.0.
+  * Enabling hardening (set DEB_BUILD_MAINT_OPTIONS indebian/rules).
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Tue, 20 Dec 2016 23:44:54 +0200
+
+lxterminal (0.2.0-1) unstable; urgency=low
+
+  * Adding --disable-silent-rules to fix buildlog checker warning.
+  * Removing Daniel Baumann from Uploaders by his request (Closes: #704351).
+  * Updating watch file to support XZ tarball format and non-numeric versions.
+  * Merging upstream version 0.2.0:
+    - Fixed problem shortcuts Ctrl+Shift+C and Ctrl+Shift+V (Closes: #689216).
+    - Fixed size changing when switching menu/scroll bars (Closes: #745713).
+    - Fixed initial geometry setup (Closes: #747288).
+  * Bump Standards-Version to 3.9.6.
+  * Adding myself to Uploaders.
+  * Removing 01-fix-mnemonics.patch, it is included in upstream source.
+  * Removing --enable-man option from configure, it isn't required now.
+  * Removing override_dh_auto_test target since upstream fixed the problem.
+  * Removing obsolete target override_dh_builddeb from debian/rules file.
+  * Updating debian/copyright file (adding two authors).
+  * Setting NEWS file as ustream changelog (satisfy lintian notice).
+  * Adding lintian-overrides file for debian-watch-may-check-gpg-signature.
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Wed, 22 Oct 2014 01:08:51 +0300
+
+lxterminal (0.1.11-4) unstable; urgency=low
+
+  * Moving package to priority optional.
+  * Adding debug package.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 18 May 2012 19:29:36 +0200
+
+lxterminal (0.1.11-3) unstable; urgency=low
+
+  * Updating maintainer field.
+  * Adding myself to uploaders.
+  * Updating vcs fields.
+  * Removing whitespaces at EOL and EOF.
+  * Updating package to debhelper version 9.
+  * Updating package to standards version 3.9.3.
+  * Making build-depends unversioned where already fulfiled as of
+    squeeze.
+  * Updating homepage field.
+  * Rewriting copyright file machine-readable format version 1.0.
+  * Prefixing debhelper files with package name.
+  * Rediffing fix-mnemonics.patch.patch with common diff options.
+  * Decrufting rules file.
+  * Moving pixmap to pixmaps subdirectory within the packaging.
+  * Using debhelper install file to install pixmaps rather than override
+    in rules.
+  * Always installing appport hook, not just on ubuntu.
+  * Switching to xz compression for both the source and the binary
+    packages.
+  * Rewriting package descriptions.
+  * Using postinst boilerplate.
+  * Using prerm boilerplate.
+  * Completing menu file.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 15 Apr 2012 15:28:27 +0000
+
+lxterminal (0.1.11-2) unstable; urgency=low
+
+  * fix DEP-5 compliance
+  * Add upsream feature to disable Alt+n mnemonics. Closes LP#830683 as well.
+
+ -- Yao Wei (魏銘廷) <mwei@lxde.org>  Sun, 11 Dec 2011 16:08:29 +0800
+
+lxterminal (0.1.11-1) unstable; urgency=low
+
+  * Update Vcs-Browser and Vcs-Git.
+  * Sorting Vcs tags.
+  * Sorting depends.
+  * Merging upstream version 0.1.11:
+    - fix desynchonization of terminal index and notebook index (fixes 3372388)
+    - solve rgba composite problems. (fixed 3376800)
+  * Drop 01_composite_fix.patch: included in upstream.
+  * Drop 02_index_fix.patch: included in upstream.
+  * Removing debian/patches: no patch available.
+  * Removing useless whitespaces at EOL and EOF.
+  * Use debhelper 8.
+  * Sorting build-depends.
+  * Warpping build-depends.
+  * Remove debian/dirs: let upstream makefile does the work.
+  * Remove debian/docs: useless information.
+  * Compacting watch file.
+  * Compacting copyright file.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 30 Jul 2011 00:36:24 +0800
+
+lxterminal (0.1.10-1) unstable; urgency=low
+
+  [ Julien Lavergne ]
+  * debian/apport/source_lxterminal.py: Add apport hook.
+  * debian/patches: 02-default-transparency.patch: From upstream, Set default
+    opacity to 100%.
+
+  [ Andrew Lee (李健秋) ]
+  * Moving files that not using by debhelper to debian/local/.
+  * Adding apport hook for Ubuntu and Ubuntu derivatives from
+    Julien Lavergne <gilir@ubuntu.com>.
+  * Compacting rules file.
+
+  [ Yao Wei (魏銘廷) ]
+  * Merging upstream version 0.1.10:
+    - Set default opacity to 100%.
+    - Translation updated.
+  * Remove all quilt patches, which are in new upstream release
+
+  [ Andrew Lee (李健秋) ]
+  * Disable dh_auto_test: Incomplete in po/.
+  * Removing everything other than debian/.
+  * Added 01_composite_fix.patch from Yao Wei (魏銘廷) <mwei@lxde.org>.
+  * Added 02_index_fix.patch from Yao Wei (魏銘廷) <mwei@lxde.org>.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Tue, 26 Jul 2011 17:57:50 +0800
+
+lxterminal (0.1.9-2) unstable; urgency=low
+
+  [ Andrew Lee (李健秋) ]
+  * Fix typo in changelog
+  * Knowledged and upload
+
+  [ Yao Wei (魏銘廷) ]
+  * fix debian/copyright for DEP-5 compiant
+  * added changelog for debian/changelog changes
+  * Apply patch from upstream that fixes window resizing. (Closes:#594762)
+  * copyright year fix
+  * remove quilt internal files
+  * update debian helper compatibility
+  * make patch following DEP-3
+  * fix things related to debhelper 7
+  * fix mispatched lxterminal.c
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 13 Jul 2011 23:53:45 +0800
+
+lxterminal (0.1.9-1) unstable; urgency=low
+
+  [ Yao Wei (魏銘廷) ]
+  * New upstream release
+    - Mistake in preferences file write
+    - Translation update
+  * added build-arch and build-indep. changed version number
+  * policy checklist checked. typo fix in description.
+  * minor rules stamping fix
+
+  [ Andrew Lee (李健秋) ]
+  * alt-key assignment patch included in upstream. (Closes:#584890)
+  * Added upstream developer Yao Wei (魏銘廷) as co-maintainer.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Fri, 01 Jul 2011 18:12:52 +0800
+
+lxterminal (0.1.8-1) unstable; urgency=low
+
+  [ Andrew Lee (李健秋) ]
+  * New upstream release
+    - Options -e and --command now consume arguments to the end of the line
+    - Preference dialog now GtkBuilder based, must have external XML file
+      to operate successfully
+    - Fixed to either connect or bind to the communication socket
+    - Fixed resize when font changed from larger to smaller
+    - Honor --working-directory with --command
+    - Configuration now applies immediately
+    - User preference for cursor shape
+    - User preference for audible bell
+    - User preference for allow bold
+    - User preference for hide Close button
+    - Middle click on tab closes it
+    - User can edit tab labels
+  * Backport Alt-n behavior patch from git(Closes:#539952)
+  * Backport hide menu bar patch from git
+  * Corrected source format options
+  * Bumped Standard-version to 3.9.1
+
+  [ Julien Lavergne ]
+  * debian/copyright:
+   - Update upstream authors.
+   - Update copyright file.
+  * debian/control:
+   - Bump build-depends on libgtk2.0-dev to (>= 2.12.0).
+   - Bump build-depends on libvte-dev to (>= 0.17.1).
+  * debian/manpages:
+   - Add upstream manpage.
+  * debian/patches:
+   - Remove previous patch.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 28 Jul 2010 14:35:45 -0400
+
+lxterminal (0.1.7-1) unstable; urgency=low
+
+  * New upstream release (Closes: #532492, #539952, #565979)
+    - Fix segfault after inaccessible configuration file
+    - Fix accelerator-related bug
+    - Set cwd of new tab equal to the cwd of the current tab for Linux only
+    - Support "CTRL+Left Click" to use xdg-open to open URL with webbrowser
+    - Use intltool to generate desktop file
+    - Added option for cursor blinking.
+    - Preferences are now sorted into 3 tabs.
+    - Added login shell.
+    - Removed "Transparent Background" checkbox (transparency still can be
+      set via background color).
+    - Fixed a bug which parameters with space cannot be fully sent with gio.
+    - Added features to hide menubar and scrollbar
+    - set tooltip (window title) on tabs
+    - Update translation. Manual updated.
+  * debian/control:
+    - Added Vcs-Git and Vcs-Browser tags
+    - Team maintainer: Debian LXDE Packaging Team
+        <pkg-lxde-maintainers@lists.alioth.debian.org>
+    - Put myself as uploader.
+    - Bumped Stand-Version to 3.8.4
+  * debian/rules:
+    - Added -lX11 flag (Closes:#555577)
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Mon, 15 Mar 2010 16:48:05 +0700
+
+lxterminal (0.1.6-1) unstable; urgency=low
+
+  * New upstream release
+    - Added "-T" option to fit debian-policy (Closes:#518491)
+    - Supported reposition tabs left and right
+    - Reworked lxterminal man page generation
+    - Enable regeneration of man pages via "configure --enable-man"
+    - Added Previous and Next Tab to popup menu for completeness
+    - Added icons on menu items
+  * debian/control:
+    - Build-depends on docbook-xsl
+    - Added DM flag
+  * debian/rules:
+    - Added --enable-man option
+  * Bumped Standard-version to 3.8.2
+
+ -- Andrew Lee <andrew@linux.org.tw>  Mon, 13 Jul 2009 18:11:48 +0800
+
+lxterminal (0.1.5-1) unstable; urgency=low
+
+  * New upstream release
+    - Translation update (Closes:#509750)
+    - Added "--geometry" option
+    - Added "-t|--title" option
+    - Replace GtkMenuFactory with GtkUIManager.
+    - Fixed memory leaks and a socket issue cause crash.
+    - Fixed the 'delete' key problem with "screen" application
+    - Disable F10 in lxterminal is now possible
+    - Added transparent background option
+    - Fixed Ctrl+PgUp and Ctrl+PgDown problem
+    - Make Ctrl/Shift/PgUp and Ctrl/Shift/PgDown works to navigate to
+      tabs
+    - Make Ctrl/Shift/N works
+    - Set character encoding from current locale
+  * Add Debian menu entry. (Closes:#528523)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Fri, 29 May 2009 18:03:05 +0800
+
+lxterminal (0.1.4+svn20090316-1) unstable; urgency=low
+
+  * Synced with SVN head. (Closes: #518491, #510991, #508738 and #509750)
+    - Support customizing scrollbar buffer size.
+    - Support customizing foreground and background color.
+    - Support customizing position for tab.
+    - Resolve some compile warnings.
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sun, 22 Mar 2009 21:18:00 +0800
+
+lxterminal (0.1.3-2) unstable; urgency=low
+
+  * lxterminal supports multilingual and more features than lxterm.
+    Set priority to 40 in alternatives system.
+  * Provides x-terminal-emulator. (Closes: #503388)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sun, 23 Nov 2008 15:44:17 +0800
+
+lxterminal (0.1.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #487429)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sat, 28 Jun 2008 16:55:49 +0800
